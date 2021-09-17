@@ -7,16 +7,20 @@ import { connect } from 'react-redux';
 import { sendMessage } from '../../redux/chat/chat.action';
 
 const SendBox = ({ sendMessage, chatMessages }) => {
-  const [message, setMessage] = useState([]);
+  const [content, setMessage] = useState({ message: '' });
+
+  const { message } = content;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (message === '') return;
     sendMessage({
-      message: 'lola',
+      message: message,
       createdAt: new Date(),
       sender: 'user',
       _id: chatMessages.length + 1,
     });
+    setMessage({ message: '' });
   };
 
   const handleChange = (event) => {
@@ -32,6 +36,7 @@ const SendBox = ({ sendMessage, chatMessages }) => {
           <FormInput
             handleChange={handleChange}
             name='message'
+            value={message}
             className='send-input'
             type='text'
             placeholder='Send Message'
