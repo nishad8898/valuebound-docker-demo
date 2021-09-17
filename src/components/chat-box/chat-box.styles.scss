@@ -1,0 +1,20 @@
+.chat-box {
+  overflow: hidden;
+  border-radius: 10px;
+  height: 100%;
+  max-height: 90vh;
+  width: 70%;
+  background-color: pink;
+  display: grid;
+  grid-template-rows: calc(90vh - 100px) 100px;
+
+  .chat-container {
+    overflow-y: scroll;
+    background-color: palevioletred;
+    padding: 1.5rem 2rem 1rem;
+  }
+
+  .send-box {
+    background-color: paleturquoise;
+  }
+}
