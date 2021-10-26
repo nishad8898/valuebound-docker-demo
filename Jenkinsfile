@@ -1,5 +1,3 @@
-checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nishad8898/valuebound-docker-demo']]])
-
 pipeline{
     agent any
     
