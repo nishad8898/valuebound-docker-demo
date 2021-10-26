@@ -7,4 +7,3 @@ COPY . .
 ENV PORT=3000
 EXPOSE 3000
 CMD ["yarn", "start"]
-# 20b108d775f3
